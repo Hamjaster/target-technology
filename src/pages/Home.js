@@ -1,13 +1,14 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar'
-import Dashboard from '../components/Dashboard'
 import Navbar from '../components/Navbar'
 import { Route, Routes, useNavigate } from 'react-router-dom'
-import Calendar from '../components/Calendar'
-import { useEffect } from 'react'
-import Users from '../components/users/Users'
-import Projects from '../components/Projects'
-import Scheduler from '../components/Calendar'
+import { Suspense } from 'react'
+import { Spinner } from '@chakra-ui/react'
+
+const Projects = React.lazy(() => import('../components/Projects'))
+const Dashboard = React.lazy(() => import('../components/dashboard/Dashboard'))
+const Scheduler = React.lazy(() => import('../components/calendar/Calendar'))
+const Users = React.lazy(() => import('../components/users/Users'))
 
 export default function Home() {
 
@@ -22,6 +23,7 @@ export default function Home() {
     const [showSidebar, setShowSidebar] = useState(false)
 
     return (
+
         <div className='bg-[#F5F5F5] relative flex flex-row items-center w-full ' >
 
             {/* Sidebar */}
@@ -34,15 +36,20 @@ export default function Home() {
                 {/* User Navbar */}
                 <Navbar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
 
-                <Routes>
-                    <Route default path='/dashboard' element={<Dashboard />} />
-                    <Route path='/projects' element={<Projects />} />
-                    <Route path='/users' element={<Users />} />
-                    <Route path='/calendar' element={<Scheduler />} />
-                </Routes>
+                <Suspense fallback={<div className='flex items-center justify-center h-full w-full'>Loading...</div>}>
+                    <Routes>
+                        <Route default path='/dashboard' element={<Dashboard />} />
+                        <Route path='/projects' element={<Projects />} />
+                        <Route path='/users' element={<Users />} />
+                        <Route path='/calendar' element={<Scheduler />} />
+                    </Routes>
+                </Suspense>
+
 
             </div>
 
         </div>
+
+
     )
 }

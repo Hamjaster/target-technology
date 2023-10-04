@@ -14,7 +14,7 @@ export default function Users() {
     const [serialOrderDirection, setSerialOrderDirection] = useState('asc')
     const [pages, setPages] = useState([5, 10, 15])
     const [page, setPage] = useState(0)
-    const [rowsPerPage, setRowsPerPage] = useState(pages[page])
+    const [rowsPerPage, setRowsPerPage] = useState(10)
     const [searchQuery, setSearchQuery] = useState('')
     const [rows, setRows] = useState([
         { no: '1', name: 'Hamza', age: '18', role: 'Front-end dev', gender: 'M' },

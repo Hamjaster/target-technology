@@ -5,13 +5,9 @@ import {
     PointElement,
     CategoryScale, // x-axis
     LinearScale,    // y-axis
-    PointScale,
-    Legend
-
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
-import { ResponsiveLine } from '@nivo/line'
-import { Context } from '../context/contextApi'
+import { Context } from '../../context/contextApi'
 
 ChartJS.register(LineElement, LinearScale, PointElement, CategoryScale)
 

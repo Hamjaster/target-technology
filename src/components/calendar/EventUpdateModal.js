@@ -2,6 +2,7 @@ import { Modal } from '@material-ui/core'
 import moment from 'moment'
 import React from 'react'
 import { useState } from 'react'
+import { MdOutlineDone } from 'react-icons/md'
 
 export default function EventUpdateModal({ event, setUpdateModalOpen, setEvents, updateModalOpen }) {
     const [title, setTitle] = useState(event?.data.title)
@@ -36,7 +37,7 @@ export default function EventUpdateModal({ event, setUpdateModalOpen, setEvents,
 
                 <div className="box relative  bg-white rounded-md  shadow-2xl h-96 w-[24rem] px-5 py-5">
 
-                    <div className='text-center font-semibold text-2xl'>Create a Schedule</div>
+                    <div className='text-center font-semibold text-2xl'>Update Schedule</div>
 
                     <div className="flex h-[14rem] mt-6 flex-col justify-between">
 
@@ -60,15 +61,16 @@ export default function EventUpdateModal({ event, setUpdateModalOpen, setEvents,
                             <span className='text-lg font-medium'>Select Label </span>
                             <div class="labels flex items-center space-x-3 mb-4">
 
-                                <div onClick={() => setLabel('red')} className={`${label === 'red' ? 'bg-red-800' : ''} cursor-pointer bg-red-500 px-3 py-3 rounded-full`}></div>
+                                {['red', 'green', 'blue', 'yellow', 'purple'].map((lbl) => {
 
-                                <div onClick={() => setLabel('green')} className={`${label === 'green' ? 'bg-green-800' : ''} cursor-pointer bg-green-500 px-3 py-3 rounded-full`}></div>
+                                    return <div onClick={() => setLabel(lbl)} className={`${label === lbl ? `bg-${lbl}-800` : ''} cursor-pointer bg-${lbl}-500 px-3 py-3 rounded-full relative`}>
 
-                                <div onClick={() => setLabel('yellow')} className={`${label === 'yellow' ? 'bg-yellow-800' : ''} cursor-pointer bg-yellow-500 px-3 py-3 rounded-full`}></div>
+                                        <div className={`${label === lbl ? '' : 'hidden'} tick text-white absolute top-1 right-1`}>
+                                            <MdOutlineDone />
+                                        </div>
 
-                                <div onClick={() => setLabel('blue')} className={`${label === 'blue' ? 'bg-blue-800' : ''} cursor-pointer bg-blue-500 px-3 py-3 rounded-full`}></div>
-
-                                <div onClick={() => setLabel('purple')} className={`${label === 'purple' ? 'bg-purple-800' : ''} cursor-pointer bg-purple-500 px-3 py-3 rounded-full`}></div>
+                                    </div>
+                                })}
 
                             </div>
                         </div>

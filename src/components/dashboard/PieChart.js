@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import { Context } from '../context/contextApi';
+import { Context } from '../../context/contextApi'
 
 ChartJS.register(ArcElement);
 

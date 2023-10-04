@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react';
-import { Context } from '../context/contextApi';
+import { Context } from '../../context/contextApi';
 
 export default function GetCustomEvent({ event }) {
 

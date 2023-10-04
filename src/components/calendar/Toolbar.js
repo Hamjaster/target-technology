@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md'
-import { Context } from "../context/contextApi";
+import { Context } from '../../context/contextApi';
 
 export default function GetCustomToolbar(toolbar) {
     const { toolbarDate, setToolbarDate, view, setView } = useContext(Context)
@@ -97,11 +97,12 @@ export default function GetCustomToolbar(toolbar) {
     }, [toolbar.view]);
 
     return (
-        <div className="toolbar-container mb-6 flex items-center justify-between">
+        <div className="toolbar-container mb-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 items-center justify-between">
 
             {/* <div onClick={goToToday} className="today px-5 py-2 hover:bg-black hover:text-white border-2 cursor-pointer border-black rounded-lg">Today</div> */}
 
-            <div className="navigation space-x-4 text-4xl flex items-center justify-between  w-3/5 flex-row">
+            <div className="navigation space-x-4 text-4xl flex items-center justify-between w-full  sm:w-3/5 flex-row">
+
                 <div onClick={goToBack} className="back cursor-pointer ">
                     <MdNavigateBefore />
                 </div>
@@ -116,6 +117,7 @@ export default function GetCustomToolbar(toolbar) {
                 <div onClick={goToNext} className="next cursor-pointer ">
                     <MdNavigateNext />
                 </div>
+
             </div>
 
             <div className="flex flex-row space-x-3">

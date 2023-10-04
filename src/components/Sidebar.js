@@ -37,10 +37,10 @@ export default function Sidebar({ setShowSidebar }) {
                         <img src={user} alt="" srcset="" />
                         <Link to={'/users'} className='text-xl'>Users</Link>
                     </div>
-                    <div className="flex flex-row space-x-5 items-center ">
+                    {/* <div className="flex flex-row space-x-5 items-center ">
                         <img src={settings} alt="" srcset="" />
                         <div className='text-xl'>Settings</div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>

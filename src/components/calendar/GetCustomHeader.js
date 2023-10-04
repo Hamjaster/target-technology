@@ -1,6 +1,6 @@
 
 import React, { useContext, useEffect, useState } from 'react'
-import { Context } from '../context/contextApi'
+import { Context } from '../../context/contextApi';
 
 export default function GetCustomHeader(header) {
     const { label, setLabel, date, setDate, view } = useContext(Context)
@@ -15,7 +15,7 @@ export default function GetCustomHeader(header) {
     const month = () => {
 
         return (
-            <div className='text-3xl'>{header.label}</div>
+            <div className=' text-xl sm:text-3xl'>{header.label}</div>
         )
     }
     const week = () => {
@@ -24,8 +24,8 @@ export default function GetCustomHeader(header) {
 
         return (
             <div className='flex flex-col items-center'>
-                <div className='text-4xl'>{date}</div>
-                <div className='text-xl'>{week}</div>
+                <div className='text-2xl sm:text-4xl'>{date}</div>
+                <div className='text-xs sm:text-xl'>{week}</div>
             </div>
         )
     }

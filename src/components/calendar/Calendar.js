@@ -4,18 +4,15 @@ import moment from 'moment'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import './reactCalendar.css'
 import GetCustomToolbar from './Toolbar'
-import GetCustomTimeSlot from './GetCustomTimeSlot'
 import GetCustomHeader from './GetCustomHeader'
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import GetCustomEvent from './GetCustomEvent'
-import { Context } from '../context/contextApi'
+import { Context } from '../../context/contextApi'
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css';
 import withDragAndDrop, { withDragAndDropProps } from 'react-big-calendar/lib/addons/dragAndDrop'
 import { v4 as uuidv4 } from 'uuid';
 import EventUpdateModal from './EventUpdateModal'
+import { MdOutlineDone } from 'react-icons/md'
 
 const localizer = momentLocalizer(moment) // or globalizeLocalizer
 const MemoizedGetCustomToolbar = React.memo(GetCustomToolbar);
@@ -30,6 +27,7 @@ export default function Scheduler() {
     const [label, setLabel] = useState()
     const [title, setTitle] = useState('')
     const { view } = useContext(Context)
+
     const [events, setEvents] = useState([
         {
             id: uuidv4(),
@@ -38,7 +36,7 @@ export default function Scheduler() {
                 label: "red"
             },
             start: new Date(),
-            end: new Date(moment(new Date()).add(2, 'hours')),
+            end: new Date(moment(new Date()).add(4, 'hours').subtract(1, 'day')),
 
         },
         {
@@ -134,16 +132,16 @@ export default function Scheduler() {
                             <div className="flex flex-row justify-between">
                                 <span className='text-lg font-medium'>Select Label </span>
                                 <div class="labels flex items-center space-x-3 mb-4">
+                                    {['red', 'green', 'blue', 'yellow', 'purple'].map((lbl) => {
 
-                                    <div onClick={() => setLabel('red')} className={`${label === 'red' ? 'bg-red-800' : ''} cursor-pointer bg-red-500 px-3 py-3 rounded-full`}></div>
+                                        return <div onClick={() => setLabel(lbl)} className={`${label === lbl ? `bg-${lbl}-800` : ''} cursor-pointer bg-${lbl}-500 px-3 py-3 rounded-full relative`}>
 
-                                    <div onClick={() => setLabel('green')} className={`${label === 'green' ? 'bg-green-800' : ''} cursor-pointer bg-green-500 px-3 py-3 rounded-full`}></div>
+                                            <div className={`${label === lbl ? '' : 'hidden'} tick text-white absolute top-1 right-1`}>
+                                                <MdOutlineDone />
+                                            </div>
 
-                                    <div onClick={() => setLabel('yellow')} className={`${label === 'yellow' ? 'bg-yellow-800' : ''} cursor-pointer bg-yellow-500 px-3 py-3 rounded-full`}></div>
-
-                                    <div onClick={() => setLabel('blue')} className={`${label === 'blue' ? 'bg-blue-800' : ''} cursor-pointer bg-blue-500 px-3 py-3 rounded-full`}></div>
-
-                                    <div onClick={() => setLabel('purple')} className={`${label === 'purple' ? 'bg-purple-800' : ''} cursor-pointer bg-purple-500 px-3 py-3 rounded-full`}></div>
+                                        </div>
+                                    })}
 
                                 </div>
                             </div>
