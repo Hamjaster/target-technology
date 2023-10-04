@@ -1,0 +1,249 @@
+.rbc-month-header {
+    background: #e2e9f0;
+    color: rgb(94, 115, 134);
+    padding: 14px 0px;
+    font-size: 1.3rem;
+}
+
+.rbc-time-header-cell {
+    background: #e2e9f0;
+    color: rgb(94, 115, 134);
+    padding: 16px 0px;
+}
+
+.rbc-overflowing {
+    margin: 0 !important;
+}
+
+.rbc-time-header-gutter {
+    background: #e2e9f0;
+}
+
+.rbc-header+.rbc-header {
+    border: none;
+}
+
+.rbc-header {
+    border: none;
+}
+
+.rbc-toolbar {
+    margin-bottom: 2rem;
+}
+
+.rbc-today {
+    color: blue;
+    background: none;
+}
+
+.rbc-current-time-indicator {
+    background-color: blue;
+}
+
+.rbc-current-time-indicator::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    /* Adjust the size of the circle */
+    height: 14px;
+    /* Adjust the size of the circle */
+    background-color: blue;
+    /* Circle color */
+    border-radius: 50%;
+    /* Create a circle shape */
+    top: -7px;
+    /* Adjust the vertical position */
+    left: -8px;
+    /* Position it at the start */
+}
+
+
+
+.rbc-btn-group>button:hover {
+    background: #000;
+    color: white;
+}
+
+.rbc-active {
+    background: #000 !important;
+    color: white !important
+}
+
+
+.rbc-time-header {
+
+    color: whitesmoke;
+}
+
+.rbc-today>button>span {
+    color: black;
+    /* background: #303030; */
+}
+
+.rbc-time-view .rbc-allday-cell {
+    display: none;
+}
+
+.rbc-header {
+    padding: 14px 0px;
+}
+
+/* Changing border of week times */
+.rbc-timeslot-group {
+    border-bottom: 1px solid #e5e5e590;
+    min-height: 6rem;
+    background: white;
+}
+
+/* Changing border of week times */
+.rbc-time-content>*+*>* {
+    border-left: 1px solid #e5e5e570 !important;
+}
+
+.rbc-timeslot-group .rbc-timeslot {
+    border: none !important;
+}
+
+.rbc-now>.rbc-button-link {
+    background: blue;
+    padding: 2px 4px;
+    color: white;
+    border-radius: 100px;
+}
+
+
+.rbc-day-slot .rbc-time-slot {
+    border: none !important;
+}
+
+.rbc-time-gutter .rbc-timeslot-group {
+    padding: 6px 3px;
+}
+
+/* Style the scrollbar track (the background) */
+::-webkit-scrollbar {
+    width: 10px;
+    cursor: pointer;
+    /* Adjust the width as needed */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #c8c8c8;
+    /* Set your desired background color */
+    border-radius: 5px;
+    /* Adjust the border-radius for rounded edges */
+}
+
+/* Style the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9e9e9e;
+    /* Change the color on hover */
+}
+
+/* Changing border of month days */
+.rbc-month-row+.rbc-month-row {
+    border-top: 1px solid #cfcfcfa3;
+}
+
+.rbc-day-bg+.rbc-day-bg {
+    border-left: 1px solid #cfcfcfa3;
+}
+
+/* Styling month dates */
+.rbc-date-cell {
+    padding-right: 10px !important;
+    padding-top: 5px !important;
+}
+
+/* Modifying events properties */
+.rbc-event,
+.rbc-day-slot .rbc-background-event {
+    background: none;
+    padding: 2px 1px;
+}
+
+.rbc-day-slot .rbc-event,
+.rbc-day-slot .rbc-background-event {
+    border: none;
+}
+
+.rbc-event.rbc-selected,
+.rbc-day-slot .rbc-selected.rbc-background-even {
+    background: none;
+}
+
+.rbc-event-label {
+    display: none;
+}
+
+/* Styling month view */
+.rbc-month-view {
+    border: none;
+}
+
+.rbc-time-view {
+    border: none;
+}
+
+.rbc-month-header {
+    border-top-right-radius: 22px;
+    border-top-left-radius: 22px;
+}
+
+.rbc-month-row {
+    background: white;
+}
+
+.rbc-time-header-content {
+    border: none;
+}
+
+.rbc-time-header-gutter {
+    border-top-left-radius: 30px;
+}
+
+.rbc-time-header-cell {
+    border-top-right-radius: 30px !important;
+}
+
+.rbc-overflowing {
+    border: none !important;
+}
+
+.rbc-addons-dnd-resize-ns-icon {
+    width: 15px !important;
+}
+
+.rbc-addons-dnd .rbc-addons-dnd-resize-ns-anchor:first-child {
+    top: 2px !important;
+}
+
+.rbc-addons-dnd .rbc-addons-dnd-resize-ns-anchor:last-child {
+    bottom: 3px !important;
+}
+
+.rbc-event:focus,
+.rbc-day-slot .rbc-background-event:focus {
+    outline: none !important;
+}
+
+.rbc-addons-dnd .rbc-addons-dnd-resize-ew-anchor:first-child {
+    left: 2px !important;
+}
+
+.rbc-addons-dnd .rbc-addons-dnd-resize-ew-anchor:last-child {
+    right: 2px !important;
+}
+
+.rbc-addons-dnd .rbc-addons-dnd-resize-ew-anchor {
+    top: 6px;
+}
+
+.rbc-day-bg {
+    cursor: pointer;
+}
+
+.rbc-day-slot {
+    cursor: pointer;
+}

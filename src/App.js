@@ -1,12 +1,15 @@
 
 import { useContext, useEffect, useState } from 'react';
 import './App.css';
-import Dashboard from './pages/Dashboard';
 import Form from './pages/form';
 import { Context } from './context/contextApi';
+import Home from './pages/Home';
+import { useNavigate } from 'react-router-dom';
+
 
 function App() {
   const { user, setUser } = useContext(Context)
+  const navigate = useNavigate()
 
   // Checking If the user is already loged In
   useEffect(() => {
@@ -18,12 +21,16 @@ function App() {
     }
   }, [localStorage])
 
+  useEffect(() => {
+    if (user && user.name) {
+      navigate('/dashboard')
+    }
+  }, [user])
+
+
   return (
     <div className="App h-screen font-nuito ">
-
-      {/* Showing Sign up page if the user isnt registered and vice versa */}
-      {user && user.name ? <Dashboard /> : <Form />}
-
+      <Home />
     </div>
   );
 }

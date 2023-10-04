@@ -5,6 +5,7 @@ import sch from '../images/schedule_icon.svg'
 import user from '../images/user_icon.svg'
 import settings from '../images/setting_icon.svg'
 import { AiOutlineClose } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 export default function Sidebar({ setShowSidebar }) {
     return (
@@ -22,19 +23,19 @@ export default function Sidebar({ setShowSidebar }) {
 
                     <div className="flex flex-row space-x-5 items-center ">
                         <img src={dashboard} alt="" srcset="" />
-                        <div className='text-xl'>Dashboard</div>
+                        <Link to={'/dashboard'} className='text-xl'>Dashboard</Link>
                     </div>
                     <div className="flex flex-row space-x-5 items-center ">
                         <img src={trans} alt="" srcset="" />
-                        <div className='text-xl'>Transactions</div>
+                        <Link to={'/calendar'} className='text-xl'>Schedules</Link>
                     </div>
                     <div className="flex flex-row space-x-5 items-center ">
                         <img src={sch} alt="" srcset="" />
-                        <div className='text-xl'>Schedules</div>
+                        <Link to={'/projects'} className='text-xl'>Projects</Link>
                     </div>
                     <div className="flex flex-row space-x-5 items-center ">
                         <img src={user} alt="" srcset="" />
-                        <div className='text-xl'>Users</div>
+                        <Link to={'/users'} className='text-xl'>Users</Link>
                     </div>
                     <div className="flex flex-row space-x-5 items-center ">
                         <img src={settings} alt="" srcset="" />
