@@ -38,7 +38,7 @@ export default function Home() {
 
                 <Suspense fallback={<div className='flex items-center justify-center h-full w-full'>Loading...</div>}>
                     <Routes>
-                        <Route default path='/dashboard' element={<Dashboard />} />
+                        <Route default path='/' element={<Dashboard />} />
                         <Route path='/projects' element={<Projects />} />
                         <Route path='/users' element={<Users />} />
                         <Route path='/calendar' element={<Scheduler />} />

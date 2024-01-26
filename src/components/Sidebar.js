@@ -23,7 +23,7 @@ export default function Sidebar({ setShowSidebar }) {
 
                     <div className="flex flex-row space-x-5 items-center ">
                         <img src={dashboard} alt="" srcset="" />
-                        <Link to={'/dashboard'} className='text-xl'>Dashboard</Link>
+                        <Link to={'/'} className='text-xl'>Dashboard</Link>
                     </div>
                     <div className="flex flex-row space-x-5 items-center ">
                         <img src={trans} alt="" srcset="" />
